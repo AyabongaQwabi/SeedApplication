@@ -16,13 +16,16 @@ module.exports = function(){
                  principal.getStudentList(school_id,function(err,results){
                         console.log('\n\nSTUDENTS\t\t'+JSON.stringify(results))
                         principal.getTeacherList(school_id,function(err,teachers){
-                              console.log('\n\nTEACHERS\t\t'+JSON.stringify(results))
-                              if(err) throw err;
-                              res.render( 'principal-main', {
-                                  info: rows[0],
-                                  students:results,
-                                  teachers:teachers
-                              });
+                            principal.getSubjects(school_id,function(err,subjects){
+                                  console.log('\n\nSUBJECTS\t\t'+JSON.stringify(subjects))
+                                  if(err) throw err;
+                                  res.render( 'principal-main', {
+                                      info: rows[0],
+                                      students:results,
+                                      teachers:teachers,
+                                      subject:subjects
+                                  });
+                            })
                         })
                         
                         

@@ -1,9 +1,5 @@
 module.exports = function(connection){
 
-  var getData = function(query, cb){
-      connection.query( query, cb);
-  };
-
   var executeQuery = function(query, data, cb){
       connection.query(query, data, cb);
   };
@@ -14,7 +10,7 @@ module.exports = function(connection){
   }
 
   this.enrollStudent= function(teacher_id,cb){
-      getData('select * from class where teacher = ?',teacher_id,cb);
+      executeQuery('select * from class where teacher = ?',teacher_id,cb);
   }
   this.addTeacher= function(teacher_id,cb){
        executeQuery('insert into teacher set ?', data, cb );
@@ -53,5 +49,7 @@ module.exports = function(connection){
   this.removeGrade = function(data,cb){
       executeQuery('insert into student_marks set ?',data,cb)
   }
-
+  this.getSubjects = function(data,cb){
+      executeQuery('select * from subject where school_id = ?',data,cb)
+  }
 }

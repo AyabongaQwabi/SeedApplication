@@ -36,3 +36,7 @@
 .tabs .indicator{
 	background-color: orange;
 }
+
+.card-panel{
+	padding:2px;
+}
