@@ -15,8 +15,8 @@ module.exports = function(connection){
   this.getMarks = function(teacher_id,cb){
       getData('select * from class where teacher = ?',teacher_id,cb);
   }
-  this.getSubjects = function (data, cb) {
-      executeQuery('insert into student set ?', data, cb );
+  this.getSubjects = function (student_id, cb) {
+      executeQuery('select * from student_subjects where student_id = ?', student_id, cb );
   };
   
 

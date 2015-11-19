@@ -12,7 +12,7 @@ module.exports = function(connection){
   this.getInfo = function(teacher_id,cb){
       getData('select * from teacher where id = ?',teacher_id,cb);
   }
-  t
+  
   this.getClass = function(teacher_id,cb){
       getData('select * from class where teacher = ?',teacher_id,cb);
   }

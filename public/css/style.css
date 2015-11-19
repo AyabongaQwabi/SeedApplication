@@ -12,3 +12,27 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.imgBadge{
+	max-width: 100%;
+}
+
+.titleSchool{
+	margin-top: -20%;
+	display: inline;
+}
+
+.tabs .tab a {
+	color:white;
+}
+.tabs .tab a:hover {
+	color:white;
+}
+.tabs .tab{
+	border:2px solid white;
+	box-shadow: 1px 1px 10px 1px white;
+}
+
+.tabs .indicator{
+	background-color: orange;
+}
